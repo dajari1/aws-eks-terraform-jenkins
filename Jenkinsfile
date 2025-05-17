@@ -59,7 +59,7 @@ pipeline {
         stage('Deploying to Kubernetes') {
           steps {
             script {
-            dir('manifests) {
+            dir('manifests') {
               sh ('aws eks update-kubeconfig --name aws-eks-cluster --region us-east-1')
               sh "kubectl get ns"
               sh "kubectl apply -f deployment.yaml"
